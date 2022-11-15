@@ -1,25 +1,17 @@
-import React from 'react'
 import styles from './Card.module.scss'
 
-export default function Card () {
+export default function Card ({title, imageUrl, desc, price}) {
+
   return (
     <div className={styles.card}>
-      <img
-        width={150}
-        height={170}
+      <img 
+        alt="Товар"
+        src={'./img/' + imageUrl}
       />
-      <h5>Test</h5>
-      <div className="card_bottom">
-        <div className="price">
-          <p>Цена:</p>
-          <span>Test руб.</span>
-        </div>
-        <div className="card_button">
-          <button>
-            <img />
-          </button>
-        </div>
-      </div>
+      <h2>{title}</h2>
+      <p>{desc}</p>
+      <b>{price}$</b>
+      <div className={styles.add_to_cart}>+</div>
     </div>
   )
 }
